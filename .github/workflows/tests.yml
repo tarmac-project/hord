@@ -61,7 +61,8 @@ jobs:
     - name: Execute Tests
       run: |
         sleep 120 
-        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/cassandra
+        cd drivers/cassandra
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
