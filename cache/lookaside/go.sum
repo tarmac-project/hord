@@ -1,5 +1,4 @@
-github.com/madflojo/hord v0.3.0 h1:uq1u2EiOhKhiA7vSLm22I54MxUOTYaD0A8Btf62+iwM=
-github.com/tarmac-project/hord v0.4.0 h1:8ezVc4PULcr9lDWX8zaZaCIunWR1ef50Lz88o7CzkaM=
-github.com/tarmac-project/hord v0.4.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
-github.com/tarmac-project/hord/drivers/mock v0.4.0 h1:S+hsLidS+r9LZ2FPYnpUgjpmWh1dVN0aQKBGWoG7kGE=
-github.com/tarmac-project/hord/drivers/mock v0.4.0/go.mod h1:cVpmCKL3jTo4/JU5wmCVKVyb0sAaLKbnM8mvlWb4hzU=
+github.com/tarmac-project/hord v0.5.0 h1:jIhq0szOyj2q+SMXA6o4pAR4NJVY9NKKr3Ow7bKfPnA=
+github.com/tarmac-project/hord v0.5.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
+github.com/tarmac-project/hord/drivers/mock v0.5.0 h1:CV/OYlKE+i/MsMYyG+jhT0aN+T8nFWKkaTqsaFedZ30=
+github.com/tarmac-project/hord/drivers/mock v0.5.0/go.mod h1:fTnYOoMJjRa+i38Z2gS7ADCzXVmQNWI2YDUq2Ym/sNk=
