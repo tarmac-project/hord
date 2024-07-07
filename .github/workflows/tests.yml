@@ -104,7 +104,8 @@ jobs:
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
-        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/redis
+        cd drivers/redis
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
@@ -131,7 +132,8 @@ jobs:
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
-        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/nats
+        cd drivers/nats
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
@@ -145,7 +147,9 @@ jobs:
       run: |
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
-      run: /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/mock
+      run: |
+        cd drivers/mock
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
@@ -159,7 +163,9 @@ jobs:
       run: |
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
-      run: /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/hashmap
+      run: |
+        cd drivers/hashmap
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
@@ -173,7 +179,9 @@ jobs:
       run: |
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
-      run: /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./drivers/bbolt
+      run: |
+        cd drivers/bbolt
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
 
@@ -228,7 +236,15 @@ jobs:
       run: |
            sleep 120 
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
-    - name: Execute Tests
-      run: /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./cache
+    - name: Execute Tests for Cache
+      run: |
+        cd cache
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+    - name: Execute Tests for Lookaside
+      run: |
+        cd lookaside
+        /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
