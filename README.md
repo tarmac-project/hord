@@ -27,8 +27,8 @@ Hord is designed to be a database-agnostic library that provides a common interf
 
 | Database | Support | Docs | Comments | Protocol Compatible Alternatives |
 | -------- | ------- | ---- | -------- | -------------------------------- |
-| [BoltDB](https://github.com/etcd-io/bbolt) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/bbolt.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/bbolt) ||
-| [Cassandra](https://cassandra.apache.org/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/cassandra.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/cassandra) | [ScyllaDB](https://www.scylladb.com/), [YugabyteDB](https://www.yugabyte.com/), [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction) |
+| [BoltDB](https://github.com/etcd-io/bbolt) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/bbolt.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/bbolt) | | |
+| [Cassandra](https://cassandra.apache.org/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/cassandra.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/cassandra) | | [ScyllaDB](https://www.scylladb.com/), [YugabyteDB](https://www.yugabyte.com/), [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction) |
 | Hashmap | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/hashmap.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/hashmap) | In-memory, Optional storage to YAML or JSON file ||
 | [Mock](https://pkg.go.dev/github.com/tarmac-project/hord/mock) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/mock)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/mock) | Mock Database interactions within unit tests ||
 | [NATS](https://nats.io/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/nats)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/nats) | Experimental ||
