@@ -19,7 +19,7 @@ func BenchmarkDrivers(b *testing.B) {
   }
   `)
 
-	b.Run("Bench_BBolt", func(b *testing.B) {
+	b.Run("Bench_BoltDB", func(b *testing.B) {
 		var db hord.Database
 		var err error
 		db, err = Dial(Config{
