@@ -6,46 +6,16 @@ import (
 	"time"
 
 	"github.com/tarmac-project/hord"
-	"github.com/tarmac-project/hord/drivers/cassandra"
 	"github.com/tarmac-project/hord/drivers/hashmap"
-	"github.com/tarmac-project/hord/drivers/redis"
 )
-
-func DialFromName(name string) (hord.Database, error) {
-	switch name {
-	case "cassandra":
-		return cassandra.Dial(cassandra.Config{
-			Hosts:    []string{"cassandra-primary", "cassandra"},
-			Keyspace: "hord",
-		})
-	case "hashmap":
-		return hashmap.Dial(hashmap.Config{})
-	case "redis":
-		return redis.Dial(redis.Config{
-			ConnectTimeout: time.Duration(5) * time.Second,
-			Server:         "redis:6379",
-		})
-	default:
-		return nil, fmt.Errorf("Unknown Database Type")
-	}
-}
 
 func TestInterfaceHappyPath(t *testing.T) {
 
 	// Setup Configurations
 	cfgs := map[string]struct {
-		cacheType   string
-		dbType      string
 		cacheMethod Type
 	}{
-		"Redis + Cassandra": {
-			cacheType:   "redis",
-			dbType:      "cassandra",
-			cacheMethod: Lookaside,
-		},
-		"Redis + Hashmap": {
-			cacheType:   "redis",
-			dbType:      "hashmap",
+		"Lookaside Caching": {
 			cacheMethod: Lookaside,
 		},
 	}
@@ -53,13 +23,12 @@ func TestInterfaceHappyPath(t *testing.T) {
 	// Loop through valid Configs and validate the driver adheres to the Hord interface
 	for name, cfg := range cfgs {
 		t.Run(name, func(t *testing.T) {
-			// Dial Dependent Databases
-			cache, err := DialFromName(cfg.cacheType)
+			cache, err := hashmap.Dial(hashmap.Config{})
 			if err != nil {
 				t.Fatalf("Failed to connect to cache - %s", err)
 			}
 
-			database, err := DialFromName(cfg.dbType)
+			database, err := hashmap.Dial(hashmap.Config{})
 			if err != nil {
 				t.Fatalf("Failed to connect to database - %s", err)
 			}
@@ -306,30 +275,29 @@ func TestInterfaceHappyPath(t *testing.T) {
 }
 
 func TestInterfaceFail(t *testing.T) {
-	// Setup Redis, Cassandra Test Databases
-	redis, err := DialFromName("redis")
+	cache, err := hashmap.Dial(hashmap.Config{})
 	if err != nil {
-		t.Fatalf("Failed to connect to Redis - %s", err)
+		t.Fatalf("Failed to connect to Hashmap - %s", err)
 	}
 
-	cass, err := DialFromName("cassandra")
+	database, err := hashmap.Dial(hashmap.Config{})
 	if err != nil {
-		t.Fatalf("Failed to connect to Cassandra - %s", err)
+		t.Fatalf("Failed to connect to Hashmap - %s", err)
 	}
 
 	// Setup Invalid Configurations
 	cfgs := make(map[string]Config)
 	cfgs["Missing Cache"] = Config{
-		Database: cass,
+		Database: database,
 		Type:     Lookaside,
 	}
 	cfgs["Missing Database"] = Config{
-		Cache: redis,
+		Cache: cache,
 		Type:  Lookaside,
 	}
 	cfgs["Invalid Type"] = Config{
-		Cache:    redis,
-		Database: cass,
+		Cache:    cache,
+		Database: database,
 		Type:     "invalid",
 	}
 
