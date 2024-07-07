@@ -7,8 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/tarmac-project/hord"
 	"github.com/nats-io/nats.go"
+	"github.com/tarmac-project/hord"
 )
 
 func TestInterfaceHappyPath(t *testing.T) {

@@ -64,8 +64,8 @@ import (
 	"regexp"
 	"sync"
 
-	"github.com/tarmac-project/hord"
 	"github.com/nats-io/nats.go"
+	"github.com/tarmac-project/hord"
 )
 
 // Config represents the configuration for the NATS database connection.
