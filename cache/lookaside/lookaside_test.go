@@ -5,8 +5,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/madflojo/hord"
-	"github.com/madflojo/hord/drivers/mock"
+	"github.com/tarmac-project/hord"
+	"github.com/tarmac-project/hord/drivers/mock"
 )
 
 // Test Errors used for testing purposes

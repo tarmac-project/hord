@@ -4,8 +4,8 @@ Package hashmap provides a Hord database driver for an in-memory hashmap.
 The Hashmap driver is a simple, in-memory key-value store that stores data in a hashmap structure. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/hashmap"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/hashmap"
 	)
 
 # Connecting to the Database
@@ -65,7 +65,7 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"gopkg.in/yaml.v3"
 )
 

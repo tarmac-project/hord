@@ -6,12 +6,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/madflojo/hord"
-	"github.com/madflojo/hord/drivers/bbolt"
-	"github.com/madflojo/hord/drivers/cassandra"
-	"github.com/madflojo/hord/drivers/hashmap"
-	"github.com/madflojo/hord/drivers/nats"
-	"github.com/madflojo/hord/drivers/redis"
+	"github.com/tarmac-project/hord"
+	"github.com/tarmac-project/hord/drivers/bbolt"
+	"github.com/tarmac-project/hord/drivers/cassandra"
+	"github.com/tarmac-project/hord/drivers/hashmap"
+	"github.com/tarmac-project/hord/drivers/nats"
+	"github.com/tarmac-project/hord/drivers/redis"
 )
 
 func BenchmarkDrivers(b *testing.B) {

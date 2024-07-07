@@ -4,8 +4,8 @@ Package nats provides a Hord database driver for the NATS key-value store.
 The NATS driver allows interacting with the NATS key-value store, which is a distributed key-value store built on top of the NATS messaging system. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/nats"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/nats"
 	)
 
 # Connecting to the Database
@@ -64,7 +64,7 @@ import (
 	"regexp"
 	"sync"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"github.com/nats-io/nats.go"
 )
 

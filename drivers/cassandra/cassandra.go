@@ -4,8 +4,8 @@ Package cassandra provides a Hord database driver for Cassandra.
 Cassandra is a highly scalable, distributed database designed to handle large amounts of data across many commodity servers. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/cassandra"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/cassandra"
 	)
 
 # Connecting to the Database
@@ -59,7 +59,7 @@ package cassandra
 import (
 	"fmt"
 	"github.com/gocql/gocql"
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 )
 
 // Config is a generic configuration that is passed when Dialing the Cassandra cluster.

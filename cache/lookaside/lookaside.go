@@ -2,8 +2,8 @@
 Package lookaside provides a Hord database driver for a look-aside cache. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/cache/lookaside"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/cache/lookaside"
 	)
 
 # Connecting to the Database
@@ -86,7 +86,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 )
 
 // Config provides the configuration options for the Lookaside driver.

@@ -4,8 +4,8 @@ Package bbolt provides a Hord database driver for BoltDB.
 BoltDB is an embedded key-value database that persists data on disk. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/bbolt"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/bbolt"
 	)
 
 # Connecting to the Database
@@ -61,7 +61,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"go.etcd.io/bbolt"
 )
 

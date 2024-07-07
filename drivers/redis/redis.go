@@ -4,8 +4,8 @@ Package redis provides a Hord database driver for Redis.
 Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/redis"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/redis"
 	)
 
 # Connecting to the Database
@@ -61,7 +61,7 @@ import (
 	"fmt"
 	"github.com/FZambia/sentinel"
 	"github.com/gomodule/redigo/redis"
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"time"
 )
 

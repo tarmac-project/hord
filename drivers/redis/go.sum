@@ -3,8 +3,8 @@ github.com/FZambia/sentinel v1.1.1/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2F
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/gomodule/redigo v1.9.2 h1:HrutZBLhSIU8abiSfW8pj8mPhOyMYjZT/wcA4/L9L9s=
 github.com/gomodule/redigo v1.9.2/go.mod h1:KsU3hiK/Ay8U42qpaJk+kuNa3C+spxapWpM+ywhcgtw=
-github.com/madflojo/hord v0.3.0 h1:uq1u2EiOhKhiA7vSLm22I54MxUOTYaD0A8Btf62+iwM=
-github.com/madflojo/hord v0.3.0/go.mod h1:wXy4XFyefuQIRSuVyNQJkfJVDRpXGv23yElKuBQUdoY=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
+github.com/tarmac-project/hord v0.4.0 h1:8ezVc4PULcr9lDWX8zaZaCIunWR1ef50Lz88o7CzkaM=
+github.com/tarmac-project/hord v0.4.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=

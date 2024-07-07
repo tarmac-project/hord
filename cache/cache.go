@@ -2,8 +2,8 @@
 Package cache provides a Hord database driver for a variety of caching strategies. To use this driver, import it as follows:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/cache"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/cache"
 	)
 
 # Connecting to the Database
@@ -87,8 +87,8 @@ package cache
 import (
 	"errors"
 
-	"github.com/madflojo/hord"
-	"github.com/madflojo/hord/cache/lookaside"
+	"github.com/tarmac-project/hord"
+	"github.com/tarmac-project/hord/cache/lookaside"
 )
 
 // CacheType is the type of cache to use.

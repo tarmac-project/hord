@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"github.com/nats-io/nats.go"
 )
 

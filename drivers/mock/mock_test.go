@@ -2,7 +2,7 @@ package mock
 
 import (
 	"fmt"
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 	"testing"
 )
 

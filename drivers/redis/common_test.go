@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/madflojo/hord"
+	"github.com/tarmac-project/hord"
 )
 
 func TestInterfaceHappyPath(t *testing.T) {

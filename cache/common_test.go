@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/madflojo/hord"
-	"github.com/madflojo/hord/drivers/cassandra"
-	"github.com/madflojo/hord/drivers/hashmap"
-	"github.com/madflojo/hord/drivers/redis"
+	"github.com/tarmac-project/hord"
+	"github.com/tarmac-project/hord/drivers/cassandra"
+	"github.com/tarmac-project/hord/drivers/hashmap"
+	"github.com/tarmac-project/hord/drivers/redis"
 )
 
 func DialFromName(name string) (hord.Database, error) {

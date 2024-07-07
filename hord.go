@@ -9,7 +9,7 @@ Hord is designed to be a database-agnostic library that provides a common interf
 
 To use Hord, import it as follows:
 
-	import "github.com/madflojo/hord"
+	import "github.com/tarmac-project/hord"
 
 # Creating a Database Client
 
@@ -18,8 +18,8 @@ To create a database client, you need to import and use the appropriate driver p
 For example, to use the Redis driver:
 
 	import (
-	    "github.com/madflojo/hord"
-	    "github.com/madflojo/hord/redis"
+	    "github.com/tarmac-project/hord"
+	    "github.com/tarmac-project/hord/redis"
 	)
 
 	func main() {

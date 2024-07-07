@@ -1,9 +1,9 @@
 # Hord
 
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/madflojo/hord)
-[![codecov](https://codecov.io/gh/madflojo/hord/branch/main/graph/badge.svg?token=0TTTEWHLVN)](https://codecov.io/gh/madflojo/hord)
-[![Go Report Card](https://goreportcard.com/badge/github.com/madflojo/hord)](https://goreportcard.com/report/github.com/madflojo/hord)
-[![Documentation](https://godoc.org/github.com/madflojo/hord?status.svg)](http://godoc.org/github.com/madflojo/hord)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/tarmac-project/hord)
+[![codecov](https://codecov.io/gh/tarmac-project/hord/branch/main/graph/badge.svg?token=0TTTEWHLVN)](https://codecov.io/gh/tarmac-project/hord)
+[![Go Report Card](https://goreportcard.com/badge/github.com/tarmac-project/hord)](https://goreportcard.com/report/github.com/tarmac-project/hord)
+[![Documentation](https://godoc.org/github.com/tarmac-project/hord?status.svg)](http://godoc.org/github.com/tarmac-project/hord)
 
 Package hord provides a simple and extensible interface for interacting with various database systems in a uniform way.
 
@@ -43,7 +43,7 @@ Hord is designed to be a database-agnostic library that provides a common interf
 
 To use Hord, import it as follows:
 
-    import "github.com/madflojo/hord"
+    import "github.com/tarmac-project/hord"
 
 ### Creating a Database Client
 
@@ -53,8 +53,8 @@ For example, to use the Redis driver:
 
 ```go
 import (
-    "github.com/madflojo/hord"
-    "github.com/madflojo/hord/redis"
+    "github.com/tarmac-project/hord"
+    "github.com/tarmac-project/hord/redis"
 )
 
 func main() {
