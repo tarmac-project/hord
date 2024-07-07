@@ -23,7 +23,7 @@ Hord is designed to be a database-agnostic library that provides a common interf
 
 - **Cache Implementations**: Combine database drivers with pre-defined cache implementations.
 
-## Database Drivers:
+## Database Drivers
 
 | Database | Support | Docs | Comments | Protocol Compatible Alternatives |
 | -------- | ------- | ---- | -------- | -------------------------------- |
