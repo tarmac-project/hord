@@ -244,7 +244,7 @@ jobs:
       uses: codecov/codecov-action@v3
     - name: Execute Tests for Lookaside
       run: |
-        cd lookaside
+        cd cache/lookaside
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
