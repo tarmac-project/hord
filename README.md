@@ -3,7 +3,8 @@
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/tarmac-project/hord)
 [![codecov](https://codecov.io/gh/tarmac-project/hord/branch/main/graph/badge.svg?token=0TTTEWHLVN)](https://codecov.io/gh/tarmac-project/hord)
 [![Go Report Card](https://goreportcard.com/badge/github.com/tarmac-project/hord)](https://goreportcard.com/report/github.com/tarmac-project/hord)
-[![Documentation](https://godoc.org/github.com/tarmac-project/hord?status.svg)](http://godoc.org/github.com/tarmac-project/hord)
+[![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord.svg)](https://pkg.go.dev/github.com/tarmac-project/hord)
+[![License](https://img.shields.io/github/license/tarmac-project/hord)](https://choosealicense.com/licenses/apache-2.0/)
 
 Package hord provides a simple and extensible interface for interacting with various database systems in a uniform way.
 
@@ -24,20 +25,24 @@ Hord is designed to be a database-agnostic library that provides a common interf
 
 ## Database Drivers:
 
-| Database | Support | Comments | Protocol Compatible Alternatives |
-| -------- | ------- | -------- | -------------------------------- |
-| [BoltDB](https://github.com/etcd-io/bbolt) | ✅ | | |
-| [Cassandra](https://cassandra.apache.org/) | ✅ | | [ScyllaDB](https://www.scylladb.com/), [YugabyteDB](https://www.yugabyte.com/), [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction) |
-| Hashmap | ✅ | Optionally allows storing to YAML or JSON file ||
-| Mock | ✅ | Mock Database interactions within unit tests ||
-| [NATS](https://nats.io/) | ✅ | Experimental ||
-| [Redis](https://redis.io/) | ✅ || [Dragonfly](https://www.dragonflydb.io/), [KeyDB](https://docs.keydb.dev/) |
+| Database | Support | Docs | Comments | Protocol Compatible Alternatives |
+| -------- | ------- | ---- | -------- | -------------------------------- |
+| [BoltDB](https://github.com/etcd-io/bbolt) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/bbolt.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/bbolt) ||
+| [Cassandra](https://cassandra.apache.org/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/cassandra.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/cassandra) | [ScyllaDB](https://www.scylladb.com/), [YugabyteDB](https://www.yugabyte.com/), [Azure Cosmos DB](https://learn.microsoft.com/en-us/azure/cosmos-db/introduction) |
+| Hashmap | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/hashmap.svg)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/hashmap) | In-memory, Optional storage to YAML or JSON file ||
+| [Mock](https://pkg.go.dev/github.com/tarmac-project/hord/mock) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/mock)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/mock) | Mock Database interactions within unit tests ||
+| [NATS](https://nats.io/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/nats)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/nats) | Experimental ||
+| [Redis](https://redis.io/) | ✅ | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/drivers/redis)](https://pkg.go.dev/github.com/tarmac-project/hord/drivers/redis) || [Dragonfly](https://www.dragonflydb.io/), [KeyDB](https://docs.keydb.dev/) |
 
 ## Caching Implementations
 
-| Cache Strategy | Comments |
-| -------------- | -------- |
-| Look Aside | Cache is checked before database, if not found in cache, database is checked and cache is updated |
+[![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/cache)](https://pkg.go.dev/github.com/tarmac-project/hord/cache)
+
+Hord provides a set of cache implementations that can be used with the Hord interface to allow combining datastores. For example, you can use the Look Aside cache driver to check Redis before fetching from Cassandra.
+
+| Cache Strategy | Docs | Comments |
+| -------------- | ---- | -------- |
+| Look Aside | [![Go Reference](https://pkg.go.dev/badge/github.com/tarmac-project/hord/cache/lookaside)](https://pkg.go.dev/github.com/tarmac-project/hord/cache/lookaside) | Cache is checked before database, if not found in cache, database is checked and cache is updated |
 
 ## Usage
 
@@ -54,7 +59,7 @@ For example, to use the Redis driver:
 ```go
 import (
     "github.com/tarmac-project/hord"
-    "github.com/tarmac-project/hord/redis"
+    "github.com/tarmac-project/hord/drivers/redis"
 )
 
 func main() {
