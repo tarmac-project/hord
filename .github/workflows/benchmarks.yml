@@ -45,7 +45,8 @@ jobs:
     - name: Execute Benchmarks
       run: |
         sleep 120
-        /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Cassandra" ./...
+        cd ./drivers/cassandra
+        /usr/local/go/bin/go test -run=Benchmark -bench ./... | tee output.txt
 
   redis:
     runs-on: ubuntu-latest
@@ -69,6 +70,7 @@ jobs:
     - name: Execute Benchmarks
       run: |
         sleep 60
+        cd ./drivers/redis
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Redis" ./...
 
   keydb:
@@ -86,6 +88,7 @@ jobs:
     - name: Execute Benchmarks
       run: |
         sleep 60
+        cd ./drivers/redis
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_KeyDB" ./...
 
   nats:
@@ -108,6 +111,7 @@ jobs:
     - name: Execute Benchmarks
       run: |
         sleep 60
+        cd ./drivers/nats
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_NATS" ./...
 
   hashmap:
@@ -120,7 +124,24 @@ jobs:
       run: |
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Benchmarks
-      run: /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Hashmap" ./...
+      run: |
+        cd ./drivers/hashmap
+        /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Hashmap" ./... | tee output.txt
+    - name: Download previous benchmark data
+      uses: actions/cache@v4
+      with:
+        path: ./cache
+        key: hashmap-benchmark
+    - name: Store benchmark result
+      uses: benchmark-action/github-action-benchmark@v1
+      with:
+        tool: 'go'
+        output-file-path: output.txt
+        external-data-json-path: ./cache/hashmap-benchmark-data.json
+        fail-on-alert: true 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        comment-on-alert: true
+        summary-always: true
 
   boltdb:
     runs-on: ubuntu-latest
@@ -132,4 +153,6 @@ jobs:
       run: |
            curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Benchmarks
-      run: /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_BoltDB" ./...
+      run: |
+        cd ./drivers/bbolt
+        /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_BoltDB" ./... 
