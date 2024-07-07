@@ -1,5 +1,7 @@
 # Hord
 
+![Hord Gopher](hord-banner.png)
+
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/tarmac-project/hord)
 [![codecov](https://codecov.io/gh/tarmac-project/hord/branch/main/graph/badge.svg?token=0TTTEWHLVN)](https://codecov.io/gh/tarmac-project/hord)
 [![Go Report Card](https://goreportcard.com/badge/github.com/tarmac-project/hord)](https://goreportcard.com/report/github.com/tarmac-project/hord)
