@@ -1,5 +1,5 @@
-github.com/tarmac-project/hord v0.5.0 h1:jIhq0szOyj2q+SMXA6o4pAR4NJVY9NKKr3Ow7bKfPnA=
-github.com/tarmac-project/hord v0.5.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
+github.com/tarmac-project/hord v0.6.0 h1:ifrJ6aUV2N9I+YAPnFvMO2eMgjE/Ki+ixaXUFAHEJTI=
+github.com/tarmac-project/hord v0.6.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
 github.com/tarmac-project/hord/drivers/hashmap v0.5.0 h1:tMkwh52N0oIYP4jHobHpte2f4rg2OceJVb9DDK6ER/Y=
 github.com/tarmac-project/hord/drivers/hashmap v0.5.0/go.mod h1:Dy4kCdSwpbdI8vtkz+05s50UDAVb780M7YKWr/3FLNs=
 github.com/tarmac-project/hord/drivers/mock v0.5.0 h1:CV/OYlKE+i/MsMYyG+jhT0aN+T8nFWKkaTqsaFedZ30=

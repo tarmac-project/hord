@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/nats-io/nats.go v1.36.0
-	github.com/tarmac-project/hord v0.4.0
+	github.com/tarmac-project/hord v0.6.0
 )
 
 require (

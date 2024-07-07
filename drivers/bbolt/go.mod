@@ -3,7 +3,7 @@ module github.com/tarmac-project/hord/drivers/bbolt
 go 1.21
 
 require (
-	github.com/tarmac-project/hord v0.4.0
+	github.com/tarmac-project/hord v0.6.0
 	go.etcd.io/bbolt v1.3.10
 )
 
