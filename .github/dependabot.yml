@@ -5,7 +5,42 @@
 
 version: 2
 updates:
-  - package-ecosystem: "gomod" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/cache"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/bbolt"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/cassandra"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/hashmap"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/mock"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/nats"
+    schedule:
+      interval: "weekly"
+  
+  - package-ecosystem: "gomod"
+    directory: "/drivers/redis"
     schedule:
       interval: "weekly"
