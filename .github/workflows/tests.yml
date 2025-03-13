@@ -18,7 +18,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out .
@@ -57,7 +57,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         sleep 120 
@@ -101,7 +101,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         cd drivers/redis
@@ -129,7 +129,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         cd drivers/nats
@@ -145,7 +145,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         cd drivers/mock
@@ -161,7 +161,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         cd drivers/hashmap
@@ -177,7 +177,7 @@ jobs:
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests
       run: |
         cd drivers/bbolt
@@ -235,7 +235,7 @@ jobs:
     - name: Install Go
       run: |
            sleep 120 
-           curl -L https://go.dev/dl/go1.22.0.linux-amd64.tar.gz | tar -C /usr/local -xzf -
+           curl -L https://go.dev/dl/go1.24.1.linux-amd64.tar.gz | tar -C /usr/local -xzf -
     - name: Execute Tests for Cache
       run: |
         cd cache
