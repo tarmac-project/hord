@@ -1,6 +1,6 @@
 module github.com/tarmac-project/hord/drivers/hashmap
 
-go 1.23
+go 1.23.0
 
 require (
 	github.com/tarmac-project/hord v0.6.0
