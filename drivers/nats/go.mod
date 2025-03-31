@@ -2,8 +2,10 @@ module github.com/tarmac-project/hord/drivers/nats
 
 go 1.23.0
 
+toolchain go1.24.1
+
 require (
-	github.com/nats-io/nats.go v1.39.1
+	github.com/nats-io/nats.go v1.40.1
 	github.com/tarmac-project/hord v0.6.0
 )
 
