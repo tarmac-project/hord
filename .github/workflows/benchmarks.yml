@@ -42,7 +42,7 @@ jobs:
           - 9042
           - 9160
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
@@ -82,7 +82,7 @@ jobs:
         env:
           REDIS_URL: redis://redis:6379
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
@@ -115,7 +115,7 @@ jobs:
       keydb:
         image: eqalpha/keydb
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
@@ -153,7 +153,7 @@ jobs:
           NATS_EXTRA_FLAGS: -js
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
@@ -183,7 +183,7 @@ jobs:
     runs-on: ubuntu-latest
     container: madflojo/ubuntu-build
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
@@ -212,7 +212,7 @@ jobs:
     runs-on: ubuntu-latest
     container: madflojo/ubuntu-build
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     # Using this instead of actions/setup-go to get around an issue with act
     - name: Install Go
       run: |
