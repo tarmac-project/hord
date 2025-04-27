@@ -9,38 +9,70 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(core)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/cache"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(cache)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/bbolt"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/bbolt)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/cassandra"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/cassandra)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/hashmap"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/hashmap)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/mock"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/mock)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/nats"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/nats)"
+      include: "scope"
   
   - package-ecosystem: "gomod"
     directory: "/drivers/redis"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "build(drivers/redis)"
+      include: "scope"
+    
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
