@@ -28,7 +28,7 @@ jobs:
       
       - name: Setup Go
         if: ${{ steps.release.outputs.releases_created }}
-        uses: actions/setup-go@v4
+        uses: actions/setup-go@v5
         with:
           go-version: '1.22'
 
