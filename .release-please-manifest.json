@@ -1,10 +1,10 @@
 {
   ".": "0.6.0",
-  "cache": "0.6.0",
-  "drivers/bbolt": "0.6.0",
-  "drivers/cassandra": "0.6.0",
-  "drivers/hashmap": "0.6.0",
-  "drivers/mock": "0.6.0",
-  "drivers/nats": "0.6.0",
-  "drivers/redis": "0.6.0"
+  "cache": "0.6.1",
+  "drivers/bbolt": "0.6.1",
+  "drivers/cassandra": "0.6.1",
+  "drivers/hashmap": "0.6.1",
+  "drivers/mock": "0.6.1",
+  "drivers/nats": "0.6.1",
+  "drivers/redis": "0.6.1"
 }
