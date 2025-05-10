@@ -116,7 +116,7 @@ func Dial(cfg Config) (*Database, error) {
 
 	// Validate Bucket
 	if cfg.Bucket == "" || !reBucket.MatchString(cfg.Bucket) {
-		return db, fmt.Errorf("Bucket name is invalid")
+		return db, fmt.Errorf("bucket name is invalid")
 	}
 
 	// Build URL for cluster of servers

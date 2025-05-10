@@ -17,7 +17,11 @@ func TestInterfaceHappyPath(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unable to create test directory - %s", err)
 	}
-	defer os.RemoveAll(tmpDir)
+	defer func() {
+		if err := os.RemoveAll(tmpDir); err != nil {
+			t.Logf("Failed to remove temp directory: %v", err)
+		}
+	}()
 
 	cfgs := make(map[string]Config)
 	cfgs["Simple BBolt"] = Config{

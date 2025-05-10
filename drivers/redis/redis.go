@@ -248,7 +248,7 @@ func (db *Database) Get(key string) ([]byte, error) {
 	}
 
 	c := db.pool.Get()
-	defer c.Close()
+	defer c.Close() // nolint:errcheck
 
 	d, err := redis.Bytes(c.Do("GET", key))
 	if err != nil && err != redis.ErrNil {
@@ -277,7 +277,7 @@ func (db *Database) Set(key string, data []byte) error {
 	}
 
 	c := db.pool.Get()
-	defer c.Close()
+	defer c.Close() // nolint:errcheck
 
 	_, err := c.Do("SET", key, data)
 	if err != nil {
@@ -299,7 +299,7 @@ func (db *Database) Delete(key string) error {
 	}
 
 	c := db.pool.Get()
-	defer c.Close()
+	defer c.Close() // nolint:errcheck
 
 	_, err := c.Do("DEL", key)
 	if err != nil {
@@ -316,7 +316,7 @@ func (db *Database) Keys() ([]string, error) {
 		return []string{}, hord.ErrNoDial
 	}
 	c := db.pool.Get()
-	defer c.Close()
+	defer c.Close() // nolint:errcheck
 
 	keys, err := redis.Strings(c.Do("KEYS", "*"))
 	if err != nil {
@@ -336,7 +336,7 @@ func (db *Database) HealthCheck() error {
 	}
 
 	c := db.pool.Get()
-	defer c.Close()
+	defer c.Close() // nolint:errcheck
 
 	_, err := c.Do("PING")
 	if err != nil {
@@ -350,8 +350,8 @@ func (db *Database) Close() {
 	if db == nil || db.pool == nil {
 		return
 	}
-	defer db.pool.Close()
+	defer db.pool.Close() // nolint:errcheck
 	if db.sentinel != nil {
-		defer db.sentinel.Close()
+		defer db.sentinel.Close() // nolint:errcheck
 	}
 }

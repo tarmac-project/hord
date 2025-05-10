@@ -29,7 +29,11 @@ func BenchmarkDrivers(b *testing.B) {
 		if err != nil {
 			b.Fatalf("Got unexpected error when initializing hashmap - %s", err)
 		}
-		defer os.Remove("/tmp/bbolt-benchmark.db")
+		defer func() {
+			if err := os.Remove("/tmp/bbolt-benchmark.db"); err != nil {
+				b.Logf("Failed to remove benchmark db: %v", err)
+			}
+		}()
 		defer db.Close()
 
 		// Setup DB
