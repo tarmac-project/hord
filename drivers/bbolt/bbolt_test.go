@@ -27,7 +27,11 @@ func TestBBoltConnectivity(t *testing.T) {
 	if err != nil {
 		t.Fatalf("Unable to create test directory - %s", err)
 	}
-	defer os.RemoveAll(tmpDir)
+	defer func() {
+		if err := os.RemoveAll(tmpDir); err != nil {
+			t.Logf("Failed to remove temp directory: %v", err)
+		}
+	}()
 
 	testCases := map[string]TestCase{
 		"Happy Path Config": {

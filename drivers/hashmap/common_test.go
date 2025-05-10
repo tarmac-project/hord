@@ -19,8 +19,8 @@ func TestInterfaceHappyPath(t *testing.T) {
 	cfgs["HashmapWithYAMLStorage"] = Config{
 		Filename: "testdata/common_test.yml",
 	}
-	defer os.RemoveAll("testdata/common_test.json")
-	defer os.RemoveAll("testdata/common_test.yml")
+	defer os.RemoveAll("testdata/common_test.json") // nolint:errcheck
+	defer os.RemoveAll("testdata/common_test.yml") // nolint:errcheck
 
 	// Loop through valid Configs and validate the driver adheres to the Hord interface
 	for name, cfg := range cfgs {

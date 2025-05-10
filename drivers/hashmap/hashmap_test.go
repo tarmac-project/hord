@@ -37,7 +37,7 @@ func TestSetupCreatesFileIfNotExist(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.ext, func(t *testing.T) {
 			filename := "testdata/empty_file." + tt.ext
-			defer os.RemoveAll(filename)
+			defer os.RemoveAll(filename) // nolint:errcheck
 
 			db, err := Dial(Config{Filename: filename})
 			if err != nil {
@@ -71,7 +71,7 @@ func TestSaveToLocalFileAfterSet(t *testing.T) {
 	for _, tt := range fileTypeCases {
 		t.Run(tt.extension, func(t *testing.T) {
 			filename := "testdata/save_test." + tt.extension
-			defer os.RemoveAll(filename)
+			defer os.RemoveAll(filename) // nolint:errcheck
 
 			db, err := Dial(Config{Filename: filename})
 			if err != nil {
@@ -172,7 +172,7 @@ func TestComplexObjectSaveToFile(t *testing.T) {
 	for _, tt := range fileTypeCases {
 		t.Run(tt.extension, func(t *testing.T) {
 			filename := "testdata/complex_data_test." + tt.extension
-			defer os.RemoveAll(filename)
+			defer os.RemoveAll(filename) // nolint:errcheck
 
 			db, err := Dial(Config{Filename: filename})
 			if err != nil {

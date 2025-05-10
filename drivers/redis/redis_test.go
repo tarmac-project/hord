@@ -26,7 +26,7 @@ func TestConnectivity(t *testing.T) {
 
 		// Test a connection
 		c := db.pool.Get()
-		defer c.Close()
+		defer c.Close() // nolint:errcheck
 
 		_, err = c.Do("PING")
 		if err != nil {
@@ -70,7 +70,7 @@ func TestConnectivity(t *testing.T) {
 
 		// Test a connection
 		c := db.pool.Get()
-		defer c.Close()
+		defer c.Close() // nolint:errcheck
 
 		_, err = c.Do("PING")
 		if err != nil {

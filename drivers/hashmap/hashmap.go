@@ -114,7 +114,7 @@ func (db *Database) Setup() error {
 	if err != nil {
 		return fmt.Errorf("error checking file %q: %w", db.config.Filename, err)
 	}
-	defer file.Close()
+	defer file.Close() // nolint:errcheck
 
 	data, err := io.ReadAll(file)
 	if err != nil {
