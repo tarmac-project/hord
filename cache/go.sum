@@ -2,8 +2,12 @@ github.com/tarmac-project/hord v0.6.0 h1:ifrJ6aUV2N9I+YAPnFvMO2eMgjE/Ki+ixaXUFAH
 github.com/tarmac-project/hord v0.6.0/go.mod h1:b46vLVFfL9G/WG5BYNTNoordvQ9wQ+ibs1/Fn4v0vkE=
 github.com/tarmac-project/hord/drivers/hashmap v0.6.0 h1:B0qvQGGxylYEmDFEW0zbYuLyi0YekQy+3B/QfOpi+34=
 github.com/tarmac-project/hord/drivers/hashmap v0.6.0/go.mod h1:omkFLNmyQrT0koqI8Ji4eswU1Ou8af+EMMuKSumV85Q=
+github.com/tarmac-project/hord/drivers/hashmap v0.6.1 h1:XWGrTVFCITHcF1d+N69KckdmURPUNLIHAAVpzMHbj3I=
+github.com/tarmac-project/hord/drivers/hashmap v0.6.1/go.mod h1:Kd8fzseHkWlUK2eQKGNKJyACkLcnPVekIzYc85ziVD8=
 github.com/tarmac-project/hord/drivers/mock v0.6.0 h1:8XWfpW9I16TN1ycSRf/JU+0Oq+NuFxHlhFCe2MXaohw=
 github.com/tarmac-project/hord/drivers/mock v0.6.0/go.mod h1:B3kPMdUK3M2OoSPktP9Dm+JrllW2DMDeHeUGa41CNzc=
+github.com/tarmac-project/hord/drivers/mock v0.6.1 h1:ZmTRclWm1iEBYdcCssLSbqWW5PZFYGlugpJlboyjqE0=
+github.com/tarmac-project/hord/drivers/mock v0.6.1/go.mod h1:B3kPMdUK3M2OoSPktP9Dm+JrllW2DMDeHeUGa41CNzc=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
 gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
