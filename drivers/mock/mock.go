@@ -198,5 +198,5 @@ func (db Database) Keys() ([]string, error) {
 	return []string{}, nil
 }
 
-// Close, when called, will return and not act. Use this function to mock a Close Database call.
+// Close when called, will return and not act. Use this function to mock a Close Database call.
 func (db Database) Close() {}
