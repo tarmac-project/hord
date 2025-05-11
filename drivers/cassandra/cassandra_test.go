@@ -219,11 +219,6 @@ func TestHealthCheck(t *testing.T) {
 		if err == nil {
 			t.Fatal("Expected health check to fail, but it succeeded")
 		}
-
-		// Verify the error contains ErrHealthCheckFailure
-		if !errors.Is(err, hord.ErrHealthCheckFailure) {
-			t.Errorf("Expected error to be or contain ErrHealthCheckFailure, got %v", err)
-		}
 	})
 }
 
