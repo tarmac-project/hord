@@ -60,6 +60,7 @@ package nats
 
 import (
 	"crypto/tls"
+	"errors"
 	"fmt"
 	"regexp"
 	"sync"
@@ -109,6 +110,27 @@ type Database struct {
 // reBucket is used to validate bucket names
 var reBucket = regexp.MustCompile(`^[a-zA-Z0-9_-]+$`)
 
+// Error types specific to the NATS driver
+var (
+	// ErrBucketNameInvalid is returned when the bucket name is empty or doesn't match the required pattern
+	ErrBucketNameInvalid = fmt.Errorf("bucket name is invalid")
+
+	// ErrEmptyConnection is returned when URL and Servers are both empty
+	ErrEmptyConnection = fmt.Errorf("URL and Servers cannot be empty")
+
+	// ErrConnectFailed is returned when the connection to the NATS server fails
+	ErrConnectFailed = fmt.Errorf("unable to connect to NATS server")
+
+	// ErrJetStreamFailed is returned when creating a JetStream context fails
+	ErrJetStreamFailed = fmt.Errorf("unable to open JetStream")
+
+	// ErrKVStoreFailed is returned when creating a key-value store fails
+	ErrKVStoreFailed = fmt.Errorf("unable to open key-value store")
+
+	// ErrKVStoreUnhealthy is returned when the key-value store health check fails
+	ErrKVStoreUnhealthy = fmt.Errorf("kv store unhealthy")
+)
+
 // Dial initializes and returns a new NATS database instance.
 func Dial(cfg Config) (*Database, error) {
 	var err error
@@ -116,12 +138,12 @@ func Dial(cfg Config) (*Database, error) {
 
 	// Validate Bucket
 	if cfg.Bucket == "" || !reBucket.MatchString(cfg.Bucket) {
-		return db, fmt.Errorf("bucket name is invalid")
+		return db, ErrBucketNameInvalid
 	}
 
 	// Build URL for cluster of servers
 	if cfg.URL == "" && len(cfg.Servers) < 1 {
-		return db, fmt.Errorf("URL and Servers cannot be empty")
+		return db, ErrEmptyConnection
 	}
 	cfg.Options.Url = cfg.URL
 	cfg.Options.Servers = cfg.Servers
@@ -135,19 +157,19 @@ func Dial(cfg Config) (*Database, error) {
 	// Connect to the NATS server
 	db.conn, err = cfg.Options.Connect()
 	if err != nil {
-		return db, fmt.Errorf("unable to connect to NATS server - %s", err)
+		return db, errors.Join(ErrConnectFailed, err)
 	}
 
 	// Create a JetStream context
 	js, err := db.conn.JetStream()
 	if err != nil {
-		return db, fmt.Errorf("unable to open JetStream - %s", err)
+		return db, errors.Join(ErrJetStreamFailed, err)
 	}
 
 	// Create a key-value store within JetStream
 	db.kv, err = js.CreateKeyValue(&nats.KeyValueConfig{Bucket: cfg.Bucket})
 	if err != nil {
-		return db, fmt.Errorf("unable to open key-value store - %s", err)
+		return db, errors.Join(ErrKVStoreFailed, err)
 	}
 
 	return db, nil
@@ -157,7 +179,7 @@ func Dial(cfg Config) (*Database, error) {
 func (db *Database) Setup() error {
 	err := db.HealthCheck()
 	if err != nil {
-		return fmt.Errorf("could not setup database, unhealthy - %s", err)
+		return fmt.Errorf("could not setup database, unhealthy: %w", err)
 	}
 	return nil
 }
@@ -186,7 +208,7 @@ func (db *Database) Get(key string) ([]byte, error) {
 			// Return an error if the value is nil
 			return []byte(""), hord.ErrNil
 		}
-		return []byte(""), fmt.Errorf("unable to fetch key - %s", err)
+		return []byte(""), fmt.Errorf("unable to fetch key: %w", err)
 	}
 
 	return r.Value(), nil
@@ -217,7 +239,7 @@ func (db *Database) Set(key string, data []byte) error {
 	// Insert or update the key-value pair in the NATS key-value store
 	_, err := db.kv.Put(key, data)
 	if err != nil {
-		return fmt.Errorf("unable to set key - %s", err)
+		return fmt.Errorf("unable to set key: %w", err)
 	}
 
 	return nil
@@ -243,7 +265,7 @@ func (db *Database) Delete(key string) error {
 	// Delete the key from the NATS key-value store
 	err := db.kv.Delete(key)
 	if err != nil {
-		return fmt.Errorf("unable to remove key - %s", err)
+		return fmt.Errorf("unable to remove key: %w", err)
 	}
 
 	return nil
@@ -267,7 +289,7 @@ func (db *Database) Keys() ([]string, error) {
 		if err == nats.ErrNoKeysFound {
 			return []string{}, nil
 		}
-		return []string{}, fmt.Errorf("unable to fetch keys - %s", err)
+		return []string{}, fmt.Errorf("unable to fetch keys: %w", err)
 	}
 
 	return keys, nil
@@ -287,7 +309,7 @@ func (db *Database) HealthCheck() error {
 	// Check the status of the NATS key-value store
 	_, err := db.kv.Status()
 	if err != nil {
-		return fmt.Errorf("kv store unhealthy - %s", err)
+		return errors.Join(ErrKVStoreUnhealthy, err)
 	}
 
 	return nil
