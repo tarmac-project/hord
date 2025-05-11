@@ -5,7 +5,7 @@
   "packages": {
     ".": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord",
+      "package-name": "",
       "bump-minor-pre-major": true,
       "include-v-in-tag": true,
       "extra-files": ["go.mod", "hord.go"],
@@ -13,66 +13,66 @@
     },
     "cache": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/cache",
+      "package-name": "cache",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["cache/go.mod", "cache/cache.go"],
-      "changelog-path": "cache/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/bbolt": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/bbolt",
+      "package-name": "drivers/bbolt",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/bbolt/go.mod", "drivers/bbolt/bbolt.go"],
-      "changelog-path": "drivers/bbolt/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/cassandra": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/cassandra",
+      "package-name": "drivers/cassandra",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/cassandra/go.mod", "drivers/cassandra/cassandra.go"],
-      "changelog-path": "drivers/cassandra/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/hashmap": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/hashmap",
+      "package-name": "drivers/hashmap",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/hashmap/go.mod", "drivers/hashmap/hashmap.go"],
-      "changelog-path": "drivers/hashmap/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/mock": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/mock",
+      "package-name": "drivers/mock",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/mock/go.mod", "drivers/mock/mock.go"],
-      "changelog-path": "drivers/mock/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/nats": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/nats",
+      "package-name": "drivers/nats",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/nats/go.mod", "drivers/nats/nats.go"],
-      "changelog-path": "drivers/nats/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     },
     "drivers/redis": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/redis",
+      "package-name": "drivers/redis",
       "bump-minor-pre-major": true, 
       "include-component-in-tag": true,
       "include-v-in-tag": true,
       "extra-files": ["drivers/redis/go.mod", "drivers/redis/redis.go"],
-      "changelog-path": "drivers/redis/CHANGELOG.md"
+      "changelog-path": "CHANGELOG.md"
     }
   },
   "changelog-types": [
