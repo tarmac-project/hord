@@ -3,6 +3,7 @@ package redis
 import (
 	"crypto/tls"
 	"errors"
+	"github.com/gomodule/redigo/redis"
 	"github.com/tarmac-project/hord"
 	"testing"
 	"time"
