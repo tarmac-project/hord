@@ -1,7 +1,6 @@
 package cassandra
 
 import (
-	"errors"
 	"fmt"
 	"github.com/tarmac-project/hord"
 	"testing"
