@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/tarmac-project/hord/compare/v0.8.0...v0.8.1) (2025-05-11)
+
+
+### Bug Fixes
+
+* **errors:** align error declarations and add new error ([#40](https://github.com/tarmac-project/hord/issues/40)) ([bf6e157](https://github.com/tarmac-project/hord/commit/bf6e1573a9ea8a5e39ba0f6312d2d4a7a7210b23))
+
 ## [0.8.0](https://github.com/tarmac-project/hord/compare/v0.7.0...v0.8.0) (2025-05-11)
 
 
