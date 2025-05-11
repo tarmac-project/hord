@@ -1,7 +1,8 @@
 {
   "release-type": "go",
   "draft": false,
-  "separate-pull-requests": false,
+  "separate-pull-requests": true,
+  "tag-separator": "/",
   "packages": {
     ".": {
       "release-type": "go",
