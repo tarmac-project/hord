@@ -5,7 +5,7 @@
   "packages": {
     ".": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord",
+      "package-name": "",
       "bump-minor-pre-major": true,
       "include-v-in-tag": true,
       "extra-files": ["go.mod", "hord.go"],
@@ -13,7 +13,7 @@
     },
     "cache": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/cache",
+      "package-name": "cache",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -22,7 +22,7 @@
     },
     "drivers/bbolt": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/bbolt",
+      "package-name": "drivers/bbolt",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -31,7 +31,7 @@
     },
     "drivers/cassandra": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/cassandra",
+      "package-name": "drivers/cassandra",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -40,7 +40,7 @@
     },
     "drivers/hashmap": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/hashmap",
+      "package-name": "drivers/hashmap",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -49,7 +49,7 @@
     },
     "drivers/mock": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/mock",
+      "package-name": "drivers/mock",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -58,7 +58,7 @@
     },
     "drivers/nats": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/nats",
+      "package-name": "drivers/nats",
       "bump-minor-pre-major": true,
       "include-component-in-tag": true,
       "include-v-in-tag": true,
@@ -67,7 +67,7 @@
     },
     "drivers/redis": {
       "release-type": "go",
-      "package-name": "github.com/tarmac-project/hord/drivers/redis",
+      "package-name": "drivers/redis",
       "bump-minor-pre-major": true, 
       "include-component-in-tag": true,
       "include-v-in-tag": true,
