@@ -4,7 +4,7 @@
   "drivers/bbolt": "0.8.0",
   "drivers/cassandra": "0.8.0",
   "drivers/hashmap": "0.8.0",
-  "drivers/mock": "0.6.3",
+  "drivers/mock": "0.6.4",
   "drivers/nats": "0.8.0",
   "drivers/redis": "0.6.3"
 }
