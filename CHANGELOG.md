@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2](https://github.com/tarmac-project/hord/compare/v0.8.1...v0.8.2) (2025-05-11)
+
+
+### Bug Fixes
+
+* **health:** standardize health check error handling ([#39](https://github.com/tarmac-project/hord/issues/39)) ([bd5b979](https://github.com/tarmac-project/hord/commit/bd5b979bfb81518dea703c9d79c9422556548d74))
+
 ## [0.8.1](https://github.com/tarmac-project/hord/compare/v0.8.0...v0.8.1) (2025-05-11)
 
 
