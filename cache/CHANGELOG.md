@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3](https://github.com/tarmac-project/hord/compare/cache-v0.6.2...cache/v0.6.3) (2025-05-11)
+
+
+### Bug Fixes
+
+* **health:** standardize health check error handling ([#39](https://github.com/tarmac-project/hord/issues/39)) ([bd5b979](https://github.com/tarmac-project/hord/commit/bd5b979bfb81518dea703c9d79c9422556548d74))
+
 ## [0.6.2](https://github.com/tarmac-project/hord/compare/cache/v0.6.1...cache-v0.6.2) (2025-05-11)
 
 
