@@ -2,9 +2,45 @@ package redis
 
 import (
 	"crypto/tls"
+	"errors"
+	"github.com/gomodule/redigo/redis"
+	"github.com/tarmac-project/hord"
 	"testing"
 	"time"
 )
+
+func TestHealthCheck(t *testing.T) {
+	t.Run("No connection", func(t *testing.T) {
+		db := &Database{}
+		err := db.HealthCheck()
+		if !errors.Is(err, hord.ErrNoDial) {
+			t.Errorf("Expected ErrNoDial, got %v", err)
+		}
+	})
+
+	t.Run("Failed health check", func(t *testing.T) {
+		// Create a database instance with nil connection but non-nil pool
+		// to simulate a health check failure
+		db := &Database{
+			pool: &redis.Pool{
+				// TestOnBorrow will fail because there's no real connection
+				Dial: func() (redis.Conn, error) {
+					return nil, errors.New("connection error")
+				},
+			},
+		}
+
+		err := db.HealthCheck()
+		if err == nil {
+			t.Fatal("Expected health check to fail, got nil error")
+		}
+
+		// Verify that ErrHealthCheckFailure is in the error chain
+		if !errors.Is(err, hord.ErrHealthCheckFailure) {
+			t.Errorf("Expected error to contain ErrHealthCheckFailure, got %v", err)
+		}
+	})
+}
 
 func TestConnectivity(t *testing.T) {
 	t.Run("No Config", func(t *testing.T) {

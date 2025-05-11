@@ -57,6 +57,7 @@ Hord provides a simple abstraction for working with Cassandra, with easy-to-use 
 package cassandra
 
 import (
+	"errors"
 	"fmt"
 	"github.com/gocql/gocql"
 	"github.com/tarmac-project/hord"
@@ -293,7 +294,7 @@ func (db *Database) HealthCheck() error {
 	}
 	err := db.conn.Query("SELECT now() FROM system.local;").Exec()
 	if err != nil {
-		return fmt.Errorf("health check of Cassandra cluster failed")
+		return errors.Join(hord.ErrHealthCheckFailure, err)
 	}
 	return nil
 }

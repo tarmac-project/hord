@@ -309,7 +309,7 @@ func (db *Database) HealthCheck() error {
 	// Check the status of the NATS key-value store
 	_, err := db.kv.Status()
 	if err != nil {
-		return errors.Join(ErrKVStoreUnhealthy, err)
+		return errors.Join(hord.ErrHealthCheckFailure, ErrKVStoreUnhealthy, err)
 	}
 
 	return nil

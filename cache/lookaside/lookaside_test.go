@@ -174,8 +174,19 @@ func TestHealthCheck(t *testing.T) {
 			}
 
 			err = db.HealthCheck()
-			if !errors.Is(err, test.expectedError) {
-				t.Errorf("HealthCheck() returned error: %s, expected %s", err, test.expectedError)
+			if test.expectedError != nil {
+				// Check that the error chain contains ErrHealthCheckFailure
+				if !errors.Is(err, hord.ErrHealthCheckFailure) {
+					t.Errorf("HealthCheck() error should contain ErrHealthCheckFailure")
+				}
+				// Also check it contains the original error
+				if !errors.Is(err, test.expectedError) {
+					t.Errorf("HealthCheck() error should contain %v", test.expectedError)
+				}
+			} else {
+				if err != nil {
+					t.Errorf("HealthCheck() returned error: %s, expected nil", err)
+				}
 			}
 		})
 	}
