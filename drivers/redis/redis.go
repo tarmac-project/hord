@@ -58,6 +58,7 @@ package redis
 
 import (
 	"crypto/tls"
+	"errors"
 	"fmt"
 	"github.com/FZambia/sentinel"
 	"github.com/gomodule/redigo/redis"
@@ -340,7 +341,7 @@ func (db *Database) HealthCheck() error {
 
 	_, err := c.Do("PING")
 	if err != nil {
-		return fmt.Errorf("unable to ping Redis - %s", err)
+		return errors.Join(hord.ErrHealthCheckFailure, err)
 	}
 	return nil
 }

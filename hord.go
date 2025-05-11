@@ -63,7 +63,9 @@ Contributions to Hord are welcome! If you want to add support for a new database
 */
 package hord
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // Database is an interface that is used to create a unified database access object.
 type Database interface {
@@ -99,12 +101,13 @@ type Database interface {
 
 // Common Errors Used by Hord Drivers
 var (
-	ErrInvalidKey      = fmt.Errorf("key cannot be nil")
-	ErrInvalidData     = fmt.Errorf("data cannot be empty")
-	ErrNil             = fmt.Errorf("nil value returned from database")
-	ErrNoDial          = fmt.Errorf("no database connection defined, did you dial?")
-	ErrInvalidDatabase = fmt.Errorf("database cannot be nil")
-	ErrCacheError      = fmt.Errorf("cache error")
+	ErrInvalidKey         = fmt.Errorf("key cannot be nil")
+	ErrInvalidData        = fmt.Errorf("data cannot be empty")
+	ErrNil                = fmt.Errorf("nil value returned from database")
+	ErrNoDial             = fmt.Errorf("no database connection defined, did you dial?")
+	ErrInvalidDatabase    = fmt.Errorf("database cannot be nil")
+	ErrCacheError         = fmt.Errorf("cache error")
+	ErrHealthCheckFailure = fmt.Errorf("health check failed")
 )
 
 // ValidKey checks if a key is valid.

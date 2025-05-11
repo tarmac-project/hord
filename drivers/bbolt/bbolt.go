@@ -57,6 +57,7 @@ Hord provides a simple abstraction for working with BoltDB, with easy-to-use met
 package bbolt
 
 import (
+	"errors"
 	"fmt"
 	"os"
 	"time"
@@ -304,7 +305,7 @@ func (db *Database) HealthCheck() error {
 		return nil
 	})
 	if err != nil {
-		return fmt.Errorf("error while checking database health - %s", err)
+		return errors.Join(hord.ErrHealthCheckFailure, err)
 	}
 
 	return nil

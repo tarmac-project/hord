@@ -222,7 +222,7 @@ func (db *Database) HealthCheck() error {
 	if db.config.Filename != "" {
 		_, err := os.Stat(db.config.Filename)
 		if err != nil {
-			return fmt.Errorf("error checking if file exists: %w", err)
+			return errors.Join(hord.ErrHealthCheckFailure, err)
 		}
 	}
 

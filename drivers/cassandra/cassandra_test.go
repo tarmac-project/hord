@@ -1,6 +1,7 @@
 package cassandra
 
 import (
+	"errors"
 	"fmt"
 	"github.com/tarmac-project/hord"
 	"testing"
@@ -187,24 +188,43 @@ func TestUsage(t *testing.T) {
 }
 
 func TestHealthCheck(t *testing.T) {
-	hosts := []string{"cassandra-primary", "cassandra"}
-	db, err := Dial(Config{Hosts: hosts, Keyspace: "hord"})
-	if err != nil {
-		t.Fatalf("Got unexpected error when connecting to a cassandra cluster - %s", err)
-	}
-	defer db.Close()
-	time.Sleep(8 * time.Second)
+	t.Run("Successful health check", func(t *testing.T) {
+		hosts := []string{"cassandra-primary", "cassandra"}
+		db, err := Dial(Config{Hosts: hosts, Keyspace: "hord"})
+		if err != nil {
+			t.Fatalf("Got unexpected error when connecting to a cassandra cluster - %s", err)
+		}
+		defer db.Close()
+		time.Sleep(8 * time.Second)
 
-	err = db.Setup()
-	if err != nil {
-		t.Fatalf("Got unexpected error when initializing cassandra cluster - %s", err)
-	}
-	time.Sleep(1 * time.Second)
+		err = db.Setup()
+		if err != nil {
+			t.Fatalf("Got unexpected error when initializing cassandra cluster - %s", err)
+		}
+		time.Sleep(1 * time.Second)
 
-	err = db.HealthCheck()
-	if err != nil {
-		t.Fatalf("Unexpected error when performing health check against cassandra cluster - %s", err)
-	}
+		err = db.HealthCheck()
+		if err != nil {
+			t.Fatalf("Unexpected error when performing health check against cassandra cluster - %s", err)
+		}
+	})
+
+	t.Run("Health check failure error type", func(t *testing.T) {
+		// Create a database instance that will fail health check
+		db := &Database{
+			conn: nil, // This will cause the health check to fail
+		}
+
+		err := db.HealthCheck()
+		if err == nil {
+			t.Fatal("Expected health check to fail, but it succeeded")
+		}
+
+		// Verify the error contains ErrHealthCheckFailure
+		if !errors.Is(err, hord.ErrHealthCheckFailure) {
+			t.Errorf("Expected error to be or contain ErrHealthCheckFailure, got %v", err)
+		}
+	})
 }
 
 func TestKeys(t *testing.T) {

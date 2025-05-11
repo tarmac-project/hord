@@ -139,9 +139,9 @@ func (db *Lookaside) HealthCheck() error {
 	cacheErr := db.cache.HealthCheck()
 
 	if dataErr != nil {
-		return dataErr
+		return errors.Join(hord.ErrHealthCheckFailure, dataErr)
 	} else if cacheErr != nil {
-		return cacheErr
+		return errors.Join(hord.ErrHealthCheckFailure, cacheErr)
 	}
 
 	return nil
