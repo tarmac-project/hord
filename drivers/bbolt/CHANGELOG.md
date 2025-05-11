@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/tarmac-project/hord/compare/drivers/bbolt-v0.8.0...drivers/bbolt/v0.8.1) (2025-05-11)
+
+
+### Bug Fixes
+
+* **health:** standardize health check error handling ([#39](https://github.com/tarmac-project/hord/issues/39)) ([bd5b979](https://github.com/tarmac-project/hord/commit/bd5b979bfb81518dea703c9d79c9422556548d74))
+
 ## [0.8.0](https://github.com/tarmac-project/hord/compare/drivers/bbolt-v0.7.0...drivers/bbolt-v0.8.0) (2025-05-11)
 
 

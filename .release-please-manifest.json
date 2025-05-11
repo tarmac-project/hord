@@ -1,7 +1,7 @@
 {
   ".": "0.8.1",
   "cache": "0.6.2",
-  "drivers/bbolt": "0.8.0",
+  "drivers/bbolt": "0.8.1",
   "drivers/cassandra": "0.8.0",
   "drivers/hashmap": "0.8.0",
   "drivers/mock": "0.6.3",
