@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/gocql/gocql v1.7.0
-	github.com/tarmac-project/hord v0.8.1
+	github.com/tarmac-project/hord v0.8.2
 )
 
 require (
