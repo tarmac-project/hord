@@ -6,7 +6,7 @@ toolchain go1.24.1
 
 require (
 	github.com/nats-io/nats.go v1.42.0
-	github.com/tarmac-project/hord v0.8.1
+	github.com/tarmac-project/hord v0.8.2
 )
 
 require (
