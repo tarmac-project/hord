@@ -23,7 +23,7 @@ jobs:
       run: |
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out .
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
     
   cassandra:
     runs-on: ubuntu-latest
@@ -64,7 +64,7 @@ jobs:
         cd drivers/cassandra
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   redis:
     runs-on: ubuntu-latest
@@ -107,7 +107,7 @@ jobs:
         cd drivers/redis
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   nats:
     runs-on: ubuntu-latest
@@ -135,7 +135,7 @@ jobs:
         cd drivers/nats
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   mock:
     runs-on: ubuntu-latest
@@ -151,7 +151,7 @@ jobs:
         cd drivers/mock
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   hashmap:
     runs-on: ubuntu-latest
@@ -167,7 +167,7 @@ jobs:
         cd drivers/hashmap
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   boltdb:
     runs-on: ubuntu-latest
@@ -183,7 +183,7 @@ jobs:
         cd drivers/bbolt
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
 
   cache:
     runs-on: ubuntu-latest
@@ -241,10 +241,10 @@ jobs:
         cd cache
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
     - name: Execute Tests for Lookaside
       run: |
         cd cache/lookaside
         /usr/local/go/bin/go test -v -race -covermode=atomic -coverprofile=coverage.out ./...
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v5
+      uses: codecov/codecov-action@v6
