@@ -96,6 +96,8 @@ jobs:
         image: bitnami/redis-sentinel:latest
         env:
           REDIS_URL: redis://redis:6379
+          # Match the passwordless Redis service on this CI job's network.
+          ALLOW_EMPTY_PASSWORD: 'yes'
     steps:
     - uses: actions/checkout@v6
     # Using this instead of actions/setup-go to get around an issue with act
@@ -228,6 +230,8 @@ jobs:
         image: bitnami/redis-sentinel:latest
         env:
           REDIS_URL: redis://redis:6379
+          # Match the passwordless Redis service on this CI job's network.
+          ALLOW_EMPTY_PASSWORD: 'yes'
 
     steps:
     - uses: actions/checkout@v6

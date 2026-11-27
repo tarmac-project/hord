@@ -91,12 +91,14 @@ import (
 	"github.com/tarmac-project/hord/cache/lookaside"
 )
 
-// CacheType is the type of cache to use.
+// Type is the type of cache to use.
 type Type string
 
 const (
+	// Lookaside uses a look-aside cache in front of the database.
 	Lookaside Type = "lookaside"
-	None      Type = "none"
+	// None uses the database directly without caching.
+	None Type = "none"
 )
 
 // Config provides the configuration options for the Cache driver.
@@ -133,30 +135,37 @@ func Dial(cfg Config) (hord.Database, error) {
 	}
 }
 
+// Setup returns hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) Setup() error {
 	return hord.ErrNoDial
 }
 
+// HealthCheck returns hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) HealthCheck() error {
 	return hord.ErrNoDial
 }
 
+// Get returns nil and hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) Get(_ string) ([]byte, error) {
 	return nil, hord.ErrNoDial
 }
 
+// Set returns hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) Set(_ string, _ []byte) error {
 	return hord.ErrNoDial
 }
 
+// Delete returns hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) Delete(_ string) error {
 	return hord.ErrNoDial
 }
 
+// Keys returns nil and hord.ErrNoDial because no cache connection was established.
 func (nc *NilCache) Keys() ([]string, error) {
 	return nil, hord.ErrNoDial
 }
 
+// Close is a no-op because there is no cache connection to close.
 func (nc *NilCache) Close() {
 
 }
