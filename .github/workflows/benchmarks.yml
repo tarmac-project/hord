@@ -53,7 +53,7 @@ jobs:
         cd ./drivers/cassandra
         /usr/local/go/bin/go test -run=Benchmark -bench ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache
         key: cassandra-benchmark
@@ -93,7 +93,7 @@ jobs:
         cd ./drivers/redis
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Redis" ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache
         key: redis-benchmark
@@ -126,7 +126,7 @@ jobs:
         cd ./drivers/redis
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_KeyDB" ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache 
         key: keydb-benchmark
@@ -164,7 +164,7 @@ jobs:
         cd ./drivers/nats
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_NATS" ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache
         key: nats-benchmark
@@ -193,7 +193,7 @@ jobs:
         cd ./drivers/hashmap
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_Hashmap" ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache
         key: hashmap-benchmark
@@ -222,7 +222,7 @@ jobs:
         cd ./drivers/bbolt
         /usr/local/go/bin/go test -run=Benchmark -bench "BenchmarkDrivers/Bench_BoltDB" ./... | tee output.txt
     - name: Download previous benchmark data
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: ./cache
         key: boltdb-benchmark
