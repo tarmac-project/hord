@@ -5,6 +5,6 @@
   "drivers/cassandra": "0.8.1",
   "drivers/hashmap": "0.8.1",
   "drivers/mock": "0.6.4",
-  "drivers/nats": "0.8.1",
+  "drivers/nats": "0.9.0",
   "drivers/redis": "0.6.4"
 }
