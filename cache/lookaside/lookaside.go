@@ -101,6 +101,8 @@ type Lookaside struct {
 	cache hord.Database
 }
 
+// Dial creates a look-aside cache using the provided database and cache.
+// It returns hord.ErrInvalidDatabase if either is nil.
 func Dial(cfg Config) (*Lookaside, error) {
 	if (cfg.Database == nil) || (cfg.Cache == nil) {
 		return nil, hord.ErrInvalidDatabase
