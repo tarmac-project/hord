@@ -1,70 +1,68 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: "gomod"
-    directory: "/"
+  - package-ecosystem: gomod
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(core)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/cache"
+      prefix: chore(core)
+  - package-ecosystem: gomod
+    directory: /cache
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(cache)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/bbolt"
+      prefix: chore(cache)
+  - package-ecosystem: gomod
+    directory: /drivers/bbolt
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/bbolt)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/cassandra"
+      prefix: chore(drivers/bbolt)
+  - package-ecosystem: gomod
+    directory: /drivers/cassandra
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/cassandra)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/hashmap"
+      prefix: chore(drivers/cassandra)
+  - package-ecosystem: gomod
+    directory: /drivers/hashmap
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/hashmap)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/mock"
+      prefix: chore(drivers/hashmap)
+  - package-ecosystem: gomod
+    directory: /drivers/mock
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/mock)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/nats"
+      prefix: chore(drivers/mock)
+  - package-ecosystem: gomod
+    directory: /drivers/nats
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/nats)"
-  
-  - package-ecosystem: "gomod"
-    directory: "/drivers/redis"
+      prefix: chore(drivers/nats)
+  - package-ecosystem: gomod
+    directory: /drivers/redis
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "chore(drivers/redis)"
-    
-  - package-ecosystem: "github-actions"
-    directory: "/"
+      prefix: chore(drivers/redis)
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "weekly"
+      interval: weekly
     commit-message:
-      prefix: "ci"
-      include: "scope"
+      prefix: ci
+      include: scope
+  - package-ecosystem: npm
+    directory: /.github/commitlint
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+      include: scope
+    groups:
+      commitlint:
+        patterns:
+          - '*'

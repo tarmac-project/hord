@@ -58,14 +58,12 @@ jobs:
         path: ./cache
         key: cassandra-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/cassandra/output.txt
         external-data-json-path: ./cache/cassandra-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
 
   redis:
@@ -98,14 +96,12 @@ jobs:
         path: ./cache
         key: redis-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/redis/output.txt
         external-data-json-path: ./cache/redis-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
 
   keydb:
@@ -131,14 +127,12 @@ jobs:
         path: ./cache 
         key: keydb-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/redis/output.txt
         external-data-json-path: ./cache/keydb-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
 
   nats:
@@ -169,14 +163,12 @@ jobs:
         path: ./cache
         key: nats-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/nats/output.txt
         external-data-json-path: ./cache/nats-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
 
   hashmap:
@@ -198,14 +190,12 @@ jobs:
         path: ./cache
         key: hashmap-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/hashmap/output.txt
         external-data-json-path: ./cache/hashmap-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
 
   boltdb:
@@ -227,12 +217,10 @@ jobs:
         path: ./cache
         key: boltdb-benchmark
     - name: Store benchmark result
-      uses: benchmark-action/github-action-benchmark@v1
+      uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1
       with:
         tool: 'go'
         output-file-path: ./drivers/bbolt/output.txt
         external-data-json-path: ./cache/boltdb-benchmark-data.json
         fail-on-alert: true 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        comment-on-alert: true
         summary-always: true
