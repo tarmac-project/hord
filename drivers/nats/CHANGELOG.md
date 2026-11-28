@@ -4,6 +4,18 @@
 
 **Compatibility:** The NATS driver now requires Go 1.26.0 or newer. Users unable to upgrade can stay on v0.8.1.
 
+### Breaking connection changes
+
+The bundled nats.go v1.56.0 includes TLS and server-discovery security fixes that change connection behavior:
+
+- Supplying `TLSConfig`, `RootCAsCB`, or `TLSCertCB` now requires TLS. Plaintext-only servers reject the connection; optional-TLS servers require a valid certificate. Remove TLS settings only when a plaintext connection is intended.
+- TLS clients accept discovered servers only from authenticated, encrypted INFO messages. A single configured URL can leave older servers without a failover target. Configure multiple server URLs; for an IP address, set `TLSConfig.ServerName` to a certificate name.
+- Use `errors.Is(err, nats.ErrSecureConnWanted)` instead of direct equality because the error can be wrapped.
+- Adding a `tls://` URL through `SetServerPool` enables TLS for the connection, making plaintext servers in that pool unreachable. Discovered servers on a `wss://` connection also use secure WebSockets.
+
+Review the [upstream v1.56.0 release notes](https://github.com/nats-io/nats.go/releases/tag/v1.56.0) before upgrading, especially deployments using custom TLS options or discovered failover servers.
+
+
 
 ### Miscellaneous Chores
 
